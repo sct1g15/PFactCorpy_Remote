@@ -1,0 +1,1 @@
+mpirun -np 4  --map-by core --bind-to core python distgen2.py --trajin /mainfs/scratch/sct1g15/mydocuments/RPC/3PWL_A0201_free_310K/500ns_con/md_0_1_protein_molurcenter_uratom_urfit_time.xtc --topolin /mainfs/scratch/sct1g15/mydocuments/RPC/3PWL_A0201_free_310K/500ns_con/md_0_1_protein.pdb
