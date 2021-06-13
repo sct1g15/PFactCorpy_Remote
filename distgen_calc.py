@@ -49,45 +49,45 @@ def plot_dist():
     for i in Pro_pos:
         distoutput = np.insert(distoutput, i, 9999, axis=0)
 
-    bins = 500
+    bins = 50
     axis_range = 0, 10
     alpha = 0.4
 
-    # plt.hist(flatten_list(89, distoutput), bins=bins, range=axis_range)
-    # plt.title('Distance to nearest polar atom residue 90')
-    # plt.xlabel('Distance to nearest polar atom (Â)')
-    # plt.savefig('amide_90_DIST.png')
-    # plt.clf()
-    #
-    # plt.hist(flatten_list(97, distoutput), bins=bins, range=axis_range)
-    # plt.title('Distance to nearest polar atom residue 98')
-    # plt.xlabel('Distance to nearest polar atom (Â)')
-    # plt.savefig('amide_98_DIST.png')
-    # plt.clf()
-    #
-    # plt.hist(flatten_list(142, distoutput), bins=bins, range=axis_range)
-    # plt.title('Distance to nearest polar atom residue 143')
-    # plt.xlabel('Distance to nearest polar atom (Â²)')
-    # plt.savefig('amide_143_DIST.png')
-    # plt.clf()
-    #
-    # plt.hist(flatten_list(155, distoutput), bins=bins, range=axis_range)
-    # plt.title('Distance to nearest polar atom residue 156')
-    # plt.xlabel('Distance to nearest polar atom (Â)')
-    # plt.savefig('amide_156_DIST.png')
-    # plt.clf()
-    #
-    # plt.hist(flatten_list(195, distoutput), bins=bins, range=axis_range)
-    # plt.title('Distance to nearest polar atom residue 196')
-    # plt.xlabel('Distance to nearest polar atom (Â)')
-    # plt.savefig('amide_196_DIST.png')
-    # plt.clf()
-    #
-    # plt.hist(flatten_list(202, distoutput), bins=bins, range=axis_range)
-    # plt.title('Distance to nearest polar atom residue 203')
-    # plt.xlabel('Distance to nearest polar atom (Â)')
-    # plt.savefig('amide_203_DIST.png')
-    # plt.clf()
+    plt.hist(flatten_list(89, distoutput), bins=bins, range=axis_range)
+    plt.title('Distance to nearest polar atom residue 90')
+    plt.xlabel('Distance to nearest polar atom (Â)')
+    plt.savefig('amide_90_DIST.png')
+    plt.clf()
+
+    plt.hist(flatten_list(97, distoutput), bins=bins, range=axis_range)
+    plt.title('Distance to nearest polar atom residue 98')
+    plt.xlabel('Distance to nearest polar atom (Â)')
+    plt.savefig('amide_98_DIST.png')
+    plt.clf()
+
+    plt.hist(flatten_list(142, distoutput), bins=bins, range=axis_range)
+    plt.title('Distance to nearest polar atom residue 143')
+    plt.xlabel('Distance to nearest polar atom (Â²)')
+    plt.savefig('amide_143_DIST.png')
+    plt.clf()
+
+    plt.hist(flatten_list(155, distoutput), bins=bins, range=axis_range)
+    plt.title('Distance to nearest polar atom residue 156')
+    plt.xlabel('Distance to nearest polar atom (Â)')
+    plt.savefig('amide_156_DIST.png')
+    plt.clf()
+
+    plt.hist(flatten_list(195, distoutput), bins=bins, range=axis_range)
+    plt.title('Distance to nearest polar atom residue 196')
+    plt.xlabel('Distance to nearest polar atom (Â)')
+    plt.savefig('amide_196_DIST.png')
+    plt.clf()
+
+    plt.hist(flatten_list(202, distoutput), bins=bins, range=axis_range)
+    plt.title('Distance to nearest polar atom residue 203')
+    plt.xlabel('Distance to nearest polar atom (Â)')
+    plt.savefig('amide_203_DIST.png')
+    plt.clf()
     #
     # fig, ax = plt.subplots()
     # ax.hist(flatten_list(89, distoutput), bins=bins, range=axis_range, label = '90', alpha=alpha)
@@ -103,7 +103,7 @@ def plot_dist():
 
     hist_out = []
     for x in range(0, 275):
-        hist_out.append(np.histogram(flatten_list(x, distoutput), bins=bins))
+        hist_out.append(np.histogram(flatten_list(x, distoutput), bins=bins, range=axis_range))
 
     np.save('DIST_hist.npy', hist_out)
 
