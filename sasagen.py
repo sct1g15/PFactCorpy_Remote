@@ -86,7 +86,9 @@ def plot_sasa():
     for i in Pro_pos:
         sasaoutput_all = np.insert(sasaoutput_all, i, 9999, axis=1)
 
-    bins = 500
+    bins = 25
+    axis_range = 0, 0.12
+    alpha = 0.4
 
     plt.hist(sasaoutput_all[:,89], bins=bins)
     plt.title('SASA residue 90')
@@ -124,10 +126,6 @@ def plot_sasa():
     plt.savefig('amide_203_sasa.png')
     plt.clf()
 
-    bins = 255
-    axis_range = 0, 0.12
-    alpha = 0.4
-
     fig, ax = plt.subplots()
     ax.hist(sasaoutput_all[:,89], bins=bins, range=axis_range, label = '90', alpha=alpha)
     plt.title('Solvent Accessible Surface Area for HLA-A*02:01')
@@ -141,13 +139,10 @@ def plot_sasa():
     plt.savefig('amide_collate_SASA.png')
     plt.clf
 
-    bins = 255
-    axis_range = 0, 0.12
-    alpha = 0.4
 
     hist_out = []
     print(len(Seq))
-    print(np.histogram(sasaoutput_all[:, 0], bins=bins))
+    print(np.histogram(sasaoutput_all[:, 0], bins=bins, range=axis_range))
     for x in range(0, 275):
         hist_out.append(np.histogram(sasaoutput_all[:, x], bins=bins))
 
